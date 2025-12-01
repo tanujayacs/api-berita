@@ -1,0 +1,16 @@
+{
+  "name": "api-berita",
+  "version": "1.0.0",
+  "description": "Simple Serverless News API with Dummy Auth",
+  "main": "api/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vercel",
+    "api",
+    "serverless"
+  ],
+  "author": "",
+  "license": "ISC"
+}
