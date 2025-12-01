@@ -1,40 +1,448 @@
 import jwt from "jsonwebtoken";
 
 export default function handler(req, res) {
-  const authHeader = req.headers.authorization;
+    const authHeader = req.headers.authorization;
 
-  if (!authHeader) {
-    return res.status(401).json({ message: "Token tidak ditemukan" });
-  }
+    if (!authHeader) {
+        return res.status(401).json({ message: "Token tidak ditemukan" });
+    }
 
-  const token = authHeader.split(" ")[1];
+    const token = authHeader.split(" ")[1];
 
-  try {
-    jwt.verify(token, "SECRET_KEY"); // validasi token
+    try {
+        jwt.verify(token, "SECRET_KEY"); // validasi token
 
-    const data = [
-      {
-        id: 1,
-        judul: "Berita Teknologi Terbaru",
-        isi: "AI ChatGPT 5.1 baru rilis dan banyak digunakan developer.",
-        kategori: "Teknologi",
-        tanggal: "2025-12-01"
-      },
-      {
-        id: 2,
-        judul: "Startup Indonesia Meningkat",
-        isi: "Pertumbuhan startup meningkat pesat di Indonesia.",
-        kategori: "Bisnis",
-        tanggal: "2025-12-02"
-      }
-    ];
+        const data = [
+            [
+                {
+                    "id": "5397feb3-eb1a-4dee-a58d-d04748da9f45",
+                    "user_id": "026d7dec-9ee0-4df3-b9d7-cb77e0f84ee9",
+                    "judul": "Kenapa Begadang Bikin Tubuh Drop dan Otak Lemot #1",
+                    "penulis": "Auto Generated",
+                    "kategori": "Pendidikan",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "52b303c1ec72440da59ea6e53eb27a9e",
+                    "slug": "kenapa-begadang-bikin-tubuh-drop-dan-otak-lemot-#1",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.393580Z",
+                    "updated_at": "2025-12-01T01:07:10.393593Z"
+                },
+                {
+                    "id": "a656a1f2-bcfd-431d-9074-1b5bc7691695",
+                    "user_id": "92026b74-bb73-4219-bc3e-f2d732b836b8",
+                    "judul": "Fakta Mengejutkan Tentang Efek Kurang Tidur #2",
+                    "penulis": "Auto Generated",
+                    "kategori": "Politik",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "720b2144d9a1493c8d81963fd80247e1",
+                    "slug": "fakta-mengejutkan-tentang-efek-kurang-tidur-#2",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.393748Z",
+                    "updated_at": "2025-12-01T01:07:10.393763Z"
+                },
+                {
+                    "id": "8ec6351a-4543-46c1-9021-59f727d83bad",
+                    "user_id": "4439d81b-8b9c-476c-bb62-38d276195454",
+                    "judul": "Begadang Kronis Bisa Rusak Masa Depanmu #3",
+                    "penulis": "Auto Generated",
+                    "kategori": "Ekonomi",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "4d96dca820ab4cf48e2dca13190bd743",
+                    "slug": "begadang-kronis-bisa-rusak-masa-depanmu-#3",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.393983Z",
+                    "updated_at": "2025-12-01T01:07:10.393990Z"
+                },
+                {
+                    "id": "cf90ed58-b70b-41a7-ac62-7187c4c3a529",
+                    "user_id": "61bf3fd5-0266-4a53-854b-b5e0c313fb1b",
+                    "judul": "Dampak Kurang Tidur pada Generasi Digital #4",
+                    "penulis": "Auto Generated",
+                    "kategori": "Teknologi",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "404f8bca0526436fb205982d57ee2d13",
+                    "slug": "dampak-kurang-tidur-pada-generasi-digital-#4",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394242Z",
+                    "updated_at": "2025-12-01T01:07:10.394248Z"
+                },
+                {
+                    "id": "335e7603-b3b4-47d0-9671-6fc8cf72275c",
+                    "user_id": "63c44502-34f3-44d9-9121-ebf953b34085",
+                    "judul": "Dampak Kurang Tidur pada Generasi Digital #5",
+                    "penulis": "Auto Generated",
+                    "kategori": "Ekonomi",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "5dd509911d0049ef9c83a391ede40457",
+                    "slug": "dampak-kurang-tidur-pada-generasi-digital-#5",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394306Z",
+                    "updated_at": "2025-12-01T01:07:10.394310Z"
+                },
+                {
+                    "id": "29da96ec-0022-4f29-82e3-fed6a28c29d9",
+                    "user_id": "36a95d92-ea6a-4e39-8bb4-241208e37cfa",
+                    "judul": "Kenapa Begadang Bikin Tubuh Drop dan Otak Lemot #6",
+                    "penulis": "Auto Generated",
+                    "kategori": "Teknologi",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "884b7bb00dc6487bbdae242ef41b6e80",
+                    "slug": "kenapa-begadang-bikin-tubuh-drop-dan-otak-lemot-#6",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394386Z",
+                    "updated_at": "2025-12-01T01:07:10.394391Z"
+                },
+                {
+                    "id": "0ccb00e3-9eeb-4301-87bf-f9b9565e5da4",
+                    "user_id": "40f80dc4-3d06-46f5-a2bb-be6f311cd70f",
+                    "judul": "Begadang Kronis Bisa Rusak Masa Depanmu #7",
+                    "penulis": "Auto Generated",
+                    "kategori": "Lifestyle",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "4c9d05dd744a4c7ba18d4af2be33ea3e",
+                    "slug": "begadang-kronis-bisa-rusak-masa-depanmu-#7",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394477Z",
+                    "updated_at": "2025-12-01T01:07:10.394480Z"
+                },
+                {
+                    "id": "a7ba57b3-a529-41e9-bc5a-0e0eb68d7bdc",
+                    "user_id": "fa5c5e49-b401-4c62-9856-3be58547b167",
+                    "judul": "Fakta Mengejutkan Tentang Efek Kurang Tidur #8",
+                    "penulis": "Auto Generated",
+                    "kategori": "Lifestyle",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "4892ddfee79b4111940557e340d62a17",
+                    "slug": "fakta-mengejutkan-tentang-efek-kurang-tidur-#8",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394510Z",
+                    "updated_at": "2025-12-01T01:07:10.394514Z"
+                },
+                {
+                    "id": "7d7853f0-f8e2-4455-b092-6d4d301b42a1",
+                    "user_id": "48f14149-7665-41b5-a2c0-c3fba14260b0",
+                    "judul": "Bahaya Begadang Bisa Bikin Kamu Jadi Zombie Hidup #9",
+                    "penulis": "Auto Generated",
+                    "kategori": "Teknologi",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "63ffe90e14e2466199806537ced6682f",
+                    "slug": "bahaya-begadang-bisa-bikin-kamu-jadi-zombie-hidup-#9",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394589Z",
+                    "updated_at": "2025-12-01T01:07:10.394593Z"
+                },
+                {
+                    "id": "66900757-6e14-4032-88d9-8b284a12514e",
+                    "user_id": "994e492d-bd88-4a05-9119-94f5dac550eb",
+                    "judul": "Fakta Mengejutkan Tentang Efek Kurang Tidur #10",
+                    "penulis": "Auto Generated",
+                    "kategori": "Lifestyle",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "0a11de920cc2465082279fdb2350ce94",
+                    "slug": "fakta-mengejutkan-tentang-efek-kurang-tidur-#10",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394620Z",
+                    "updated_at": "2025-12-01T01:07:10.394622Z"
+                },
+                {
+                    "id": "b0b9b96d-fdbf-4ef6-ad19-a174f4a0f8e9",
+                    "user_id": "815ff63e-f053-4dc8-a056-23f0765c60d7",
+                    "judul": "Rahasia Gelap Dibalik Kebiasaan Begadang #11",
+                    "penulis": "Auto Generated",
+                    "kategori": "Ekonomi",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "7f88f4ec15b24be4b4841a7e8518c431",
+                    "slug": "rahasia-gelap-dibalik-kebiasaan-begadang-#11",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394655Z",
+                    "updated_at": "2025-12-01T01:07:10.394659Z"
+                },
+                {
+                    "id": "60f81515-f965-4f5f-8ba3-8f4244819d74",
+                    "user_id": "b2301ad5-fa9a-4661-a0cc-6c866d9e7284",
+                    "judul": "Rahasia Gelap Dibalik Kebiasaan Begadang #12",
+                    "penulis": "Auto Generated",
+                    "kategori": "Hiburan",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "633ff70cf31e4b4bae859c4d630e8ac7",
+                    "slug": "rahasia-gelap-dibalik-kebiasaan-begadang-#12",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394700Z",
+                    "updated_at": "2025-12-01T01:07:10.394704Z"
+                },
+                {
+                    "id": "bc180c1d-006b-4739-a298-fd648cfd9f57",
+                    "user_id": "d47fac7c-1d5c-45cd-8dfb-b9f76bf43f5b",
+                    "judul": "Bahaya Begadang Bisa Bikin Kamu Jadi Zombie Hidup #13",
+                    "penulis": "Auto Generated",
+                    "kategori": "Hiburan",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "83d2207338d443ee86f6a675a6cbd1b1",
+                    "slug": "bahaya-begadang-bisa-bikin-kamu-jadi-zombie-hidup-#13",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394746Z",
+                    "updated_at": "2025-12-01T01:07:10.394748Z"
+                },
+                {
+                    "id": "0cad27ea-6b59-447d-ab2e-2f2b3a7778b0",
+                    "user_id": "5f68a665-80cb-44e4-ab97-21bc0ef38d54",
+                    "judul": "Rahasia Gelap Dibalik Kebiasaan Begadang #14",
+                    "penulis": "Auto Generated",
+                    "kategori": "Politik",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "61e4b73d859847eca81701ddaaaa9d1a",
+                    "slug": "rahasia-gelap-dibalik-kebiasaan-begadang-#14",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394781Z",
+                    "updated_at": "2025-12-01T01:07:10.394784Z"
+                },
+                {
+                    "id": "fa636eef-84e9-4780-84cf-4b75a8d6dd3c",
+                    "user_id": "084784b7-e089-4c25-b9e1-bcbe7cfcce13",
+                    "judul": "Fakta Mengejutkan Tentang Efek Kurang Tidur #15",
+                    "penulis": "Auto Generated",
+                    "kategori": "Olahraga",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "18f9ca4a04264c47838cb493408c393b",
+                    "slug": "fakta-mengejutkan-tentang-efek-kurang-tidur-#15",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394815Z",
+                    "updated_at": "2025-12-01T01:07:10.394819Z"
+                },
+                {
+                    "id": "c7f67ea4-e295-47fd-9cae-27e16268b2da",
+                    "user_id": "8ca5ac55-efe4-4cb6-8947-39a615f0f284",
+                    "judul": "Fakta Mengejutkan Tentang Efek Kurang Tidur #16",
+                    "penulis": "Auto Generated",
+                    "kategori": "Politik",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "a2c4f1d21fd74db2a6331c05ce848054",
+                    "slug": "fakta-mengejutkan-tentang-efek-kurang-tidur-#16",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394848Z",
+                    "updated_at": "2025-12-01T01:07:10.394851Z"
+                },
+                {
+                    "id": "140a6e3c-6f9a-42d9-8b6a-21363404d093",
+                    "user_id": "c6271da6-b99d-4aad-8083-0a43e07e56aa",
+                    "judul": "Rahasia Gelap Dibalik Kebiasaan Begadang #17",
+                    "penulis": "Auto Generated",
+                    "kategori": "Olahraga",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "797fdeaf702b4579ae9a5d7d08811f54",
+                    "slug": "rahasia-gelap-dibalik-kebiasaan-begadang-#17",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394873Z",
+                    "updated_at": "2025-12-01T01:07:10.394877Z"
+                },
+                {
+                    "id": "97ce400d-e55e-4dbf-b29a-f37c642c1c5d",
+                    "user_id": "380cc57f-3a19-4604-beab-e933a4bcbbfe",
+                    "judul": "Rahasia Gelap Dibalik Kebiasaan Begadang #18",
+                    "penulis": "Auto Generated",
+                    "kategori": "Pendidikan",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "7a9b3ef8da9d46eb85e24f42b4f070c0",
+                    "slug": "rahasia-gelap-dibalik-kebiasaan-begadang-#18",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394903Z",
+                    "updated_at": "2025-12-01T01:07:10.394905Z"
+                },
+                {
+                    "id": "e6fe8a6a-c768-451b-a20f-b63bc78aaebe",
+                    "user_id": "8ee7c59c-9b93-4cd2-83f1-44a51158fa28",
+                    "judul": "Dampak Kurang Tidur pada Generasi Digital #19",
+                    "penulis": "Auto Generated",
+                    "kategori": "Teknologi",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "abbeaa6c58574c8198d5e6ee59588237",
+                    "slug": "dampak-kurang-tidur-pada-generasi-digital-#19",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394925Z",
+                    "updated_at": "2025-12-01T01:07:10.394927Z"
+                },
+                {
+                    "id": "3e5e0b04-34fe-4cf5-aa33-5cebde6c1a6f",
+                    "user_id": "7f839831-ccc3-464d-bf70-7b3991ae1938",
+                    "judul": "Rahasia Gelap Dibalik Kebiasaan Begadang #20",
+                    "penulis": "Auto Generated",
+                    "kategori": "Pendidikan",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "ea2d0b90119f4cd88494bf44429f3565",
+                    "slug": "rahasia-gelap-dibalik-kebiasaan-begadang-#20",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394946Z",
+                    "updated_at": "2025-12-01T01:07:10.394949Z"
+                },
+                {
+                    "id": "254df55d-e763-4a66-9d21-8c93b562a3d0",
+                    "user_id": "2faa8201-b3cc-460d-945a-cc628271172c",
+                    "judul": "Fakta Mengejutkan Tentang Efek Kurang Tidur #21",
+                    "penulis": "Auto Generated",
+                    "kategori": "Kesehatan",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "6b5918b256b84035bc40c9337d84d840",
+                    "slug": "fakta-mengejutkan-tentang-efek-kurang-tidur-#21",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.394981Z",
+                    "updated_at": "2025-12-01T01:07:10.394985Z"
+                },
+                {
+                    "id": "d0d26486-fb8b-4142-9129-c9c6dc97d65e",
+                    "user_id": "d9fdbff1-eb98-4d38-affc-313afc1e8ab7",
+                    "judul": "Bahaya Begadang Bisa Bikin Kamu Jadi Zombie Hidup #22",
+                    "penulis": "Auto Generated",
+                    "kategori": "Teknologi",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "a9caceb47c624b379229352910f07d4b",
+                    "slug": "bahaya-begadang-bisa-bikin-kamu-jadi-zombie-hidup-#22",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.395007Z",
+                    "updated_at": "2025-12-01T01:07:10.395010Z"
+                },
+                {
+                    "id": "1fb38a49-193d-428c-b58c-2a4d4605465e",
+                    "user_id": "962ed289-b1f0-4dfc-afb4-58742b676bf3",
+                    "judul": "Rahasia Gelap Dibalik Kebiasaan Begadang #23",
+                    "penulis": "Auto Generated",
+                    "kategori": "Politik",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "bb79da18f6674b2ab70e04d16028fee9",
+                    "slug": "rahasia-gelap-dibalik-kebiasaan-begadang-#23",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.395039Z",
+                    "updated_at": "2025-12-01T01:07:10.395052Z"
+                },
+                {
+                    "id": "df34e281-e7ce-48d6-a981-071fb5626616",
+                    "user_id": "6350fe38-4b53-40f6-b10b-a1a0c2011ce8",
+                    "judul": "Bahaya Begadang Bisa Bikin Kamu Jadi Zombie Hidup #24",
+                    "penulis": "Auto Generated",
+                    "kategori": "Pendidikan",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "9fbc0f33e8bf4cfe98bb1384ccb2d413",
+                    "slug": "bahaya-begadang-bisa-bikin-kamu-jadi-zombie-hidup-#24",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.395099Z",
+                    "updated_at": "2025-12-01T01:07:10.395103Z"
+                },
+                {
+                    "id": "cd077c4b-97ae-4bb2-b481-46fe5196f334",
+                    "user_id": "d9a29142-32e5-41fb-a9d0-1f62c6837248",
+                    "judul": "Rahasia Gelap Dibalik Kebiasaan Begadang #25",
+                    "penulis": "Auto Generated",
+                    "kategori": "Politik",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "aadfb0bd8321498b961b3667d73aa239",
+                    "slug": "rahasia-gelap-dibalik-kebiasaan-begadang-#25",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.395133Z",
+                    "updated_at": "2025-12-01T01:07:10.395137Z"
+                },
+                {
+                    "id": "bb0cba7b-cf92-4873-ac0b-7d154867baab",
+                    "user_id": "38e1364d-3db6-4493-b9ca-96ff1f120867",
+                    "judul": "Fakta Mengejutkan Tentang Efek Kurang Tidur #26",
+                    "penulis": "Auto Generated",
+                    "kategori": "Teknologi",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "24291a2f34264e719aabac872dbb2c48",
+                    "slug": "fakta-mengejutkan-tentang-efek-kurang-tidur-#26",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.395164Z",
+                    "updated_at": "2025-12-01T01:07:10.395166Z"
+                },
+                {
+                    "id": "336c1a35-3c7a-400b-8454-bedb4ded3d68",
+                    "user_id": "16885537-2216-4992-89d6-42a4ba49a5ca",
+                    "judul": "Rahasia Gelap Dibalik Kebiasaan Begadang #27",
+                    "penulis": "Auto Generated",
+                    "kategori": "Politik",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "8bb78aa479304b56ac1f405768d3aff5",
+                    "slug": "rahasia-gelap-dibalik-kebiasaan-begadang-#27",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.395185Z",
+                    "updated_at": "2025-12-01T01:07:10.395187Z"
+                },
+                {
+                    "id": "b0a39ce9-de7f-4ad5-8b31-9d847a853db0",
+                    "user_id": "8c51f5cb-1f74-486b-8c72-a309a2e1d049",
+                    "judul": "Kenapa Begadang Bikin Tubuh Drop dan Otak Lemot #28",
+                    "penulis": "Auto Generated",
+                    "kategori": "Lifestyle",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "b25e4713f6b64b939972250f3bc07f45",
+                    "slug": "kenapa-begadang-bikin-tubuh-drop-dan-otak-lemot-#28",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.395229Z",
+                    "updated_at": "2025-12-01T01:07:10.395231Z"
+                },
+                {
+                    "id": "c3a48312-2697-463f-af66-2b585b0996ea",
+                    "user_id": "db54ca8e-3512-47b9-b3d8-28d9a21020f8",
+                    "judul": "Dampak Kurang Tidur pada Generasi Digital #29",
+                    "penulis": "Auto Generated",
+                    "kategori": "Olahraga",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "34524c967dc44e48b325463b9b44e740",
+                    "slug": "dampak-kurang-tidur-pada-generasi-digital-#29",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.395264Z",
+                    "updated_at": "2025-12-01T01:07:10.395266Z"
+                },
+                {
+                    "id": "851b6809-048e-434e-a370-8be601829799",
+                    "user_id": "80764bbf-d10b-4d44-a479-9256e92e2875",
+                    "judul": "Rahasia Gelap Dibalik Kebiasaan Begadang #30",
+                    "penulis": "Auto Generated",
+                    "kategori": "Lifestyle",
+                    "status": "Public",
+                    "deskripsi": "<p>&nbsp;</p>\r\n<p>Pernah nggak kamu ngerasa tubuh makin lemah gara-gara sering begadang? Banyak orang ngeremehin hal ini padahal dampaknya serius.</p>\r\n<p>Studi menunjukkan kalau kurang tidur bisa bikin performa otak turun hingga 40%. Efeknya? Susah fokus, gampang blank, dan mood gampang hancur.</p>\r\n<p>Bukan cuma pikiran, fisik juga kena. Risiko penyakit jantung, diabetes, dan tekanan darah tinggi meningkat drastis kalau kebiasaan buruk ini diterusin.</p>\r\n<p>Begadang bikin sistem imun menurun. Makanya kamu jadi gampang sakit, gampang cape, dan produktivitas anjlok.</p>\r\n<p>Kalau terus kayak gini, masa depanmu yang kena imbasnya. Kebiasaan kecil bisa merusak hal besar tanpa kamu sadari.</p>\r\n<p>Mulai sekarang coba atur waktu tidur. Gadget dimatiin sejam sebelum tidur, dan coba rutinin pola tidur yang sehat.</p>\r\n<p>Menurut peneliti, tidur cukup bisa meningkatkan produktivitas hingga 35%. Tubuh lebih segar, pikiran lebih fokus.</p>\r\n<p>Tidur bukan cuma kebutuhan, tapi investasi buat kesehatan jangka panjang.</p>\r\n<p>Mulai malam ini, stop begadang tanpa alasan penting. Hidupmu terlalu berharga buat dirusak kebiasaan buruk.</p>",
+                    "gambar": "a63731bf29ed4fd4b12fc08cd0c79591",
+                    "slug": "rahasia-gelap-dibalik-kebiasaan-begadang-#30",
+                    "visitor_count": null,
+                    "created_at": "2025-12-01T01:07:10.395287Z",
+                    "updated_at": "2025-12-01T01:07:10.395290Z"
+                }
+            ]
+        ];
 
-    return res.status(200).json({
-      message: "Berhasil mengambil data",
-      berita: data
-    });
+        return res.status(200).json({
+            message: "Berhasil mengambil data",
+            berita: data
+        });
 
-  } catch (error) {
-    return res.status(403).json({ message: "Token tidak valid atau expired" });
-  }
+    } catch (error) {
+        return res.status(403).json({ message: "Token tidak valid atau expired" });
+    }
 }
